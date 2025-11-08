@@ -1,9 +1,13 @@
 .app {
-  max-width: 960px;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 3rem 1.5rem 4rem;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #1f2933;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app__header {
@@ -23,9 +27,11 @@
 }
 
 .app__main {
+  width: 100%;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  justify-items: stretch;
 }
 
 .payment-form {
@@ -36,6 +42,71 @@
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  width: 100%;
+}
+
+.face-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.face-auth__content h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #312e81;
+}
+
+.face-auth__content p {
+  margin: 0;
+  color: #4338ca;
+}
+
+.face-auth__capture {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.face-auth__video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 360px;
+  border-radius: 12px;
+  border: 2px solid rgba(79, 70, 229, 0.45);
+  object-fit: cover;
+  background: #0b1728;
+}
+
+.face-auth__actions {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.face-auth__actions button {
+  flex: 1;
+}
+
+.face-auth__actions .secondary {
+  background: transparent;
+  color: #4338ca;
+  border: 1px solid rgba(67, 56, 202, 0.35);
+}
+
+.face-auth__actions .secondary:hover {
+  background: rgba(67, 56, 202, 0.08);
+}
+
+.face-auth__status {
+  margin: 0;
+  font-weight: 500;
 }
 
 .field {
@@ -78,6 +149,10 @@
   transition: transform 0.15s ease, box-shadow 0.2s;
 }
 
+.payment-form button.primary {
+  border-radius: 12px;
+}
+
 .payment-form button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
@@ -87,41 +162,6 @@
 .payment-form button:not(:disabled):hover {
   transform: translateY(-1px);
   box-shadow: 0 10px 24px rgba(99, 102, 241, 0.35);
-}
-
-.payment-feedback {
-  padding: 2rem;
-  border-radius: 16px;
-  background: #0b1728;
-  color: #f5f7fa;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
-}
-
-.payment-feedback p {
-  margin: 0 0 0.75rem;
-  line-height: 1.6;
-}
-
-.payment-feedback a {
-  color: #a5b4fc;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.payment-feedback a:hover {
-  color: #c7d2fe;
-}
-
-.info {
-  color: #e0e8f9;
-}
-
-.error {
-  color: #fecdd3;
-}
-
-.success {
-  color: #bef264;
 }
 
 @media (max-width: 600px) {
